@@ -1,0 +1,43 @@
+<html>
+<style>
+  canvas{
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+   }
+  div{
+    text-align: center;  
+    margin-right: auto;
+    margin-left: auto;
+  }
+   table{
+    text-align: center;  
+    margin-right: auto;
+    margin-left: auto;
+    border: 2px solid black;
+  }
+</style>
+<script src="rps.js"></script>
+  <body>
+    <canvas id="rps" width="360px" height="360px" style="border: 2px solid black;">
+    </canvas>
+      <br>
+        <div>
+          <button id="br"> <img src="rock.png" width="100px" height="100px" id ="r" onclick="PlaySasso()"> </button>
+          <button id="bp"> <img src="paper.png" width="100px" height="100px" id ="p" onclick="PlayCarta()"> </button>
+          <button id="bs"> <img src="scissors.png" width="100px" height="100px" id ="s" onclick="PlayForbici()"> </button>
+          <br>
+          <p id="cnsl"> Scegli cosa giocare </p>
+        </div>
+        <table>
+        <tr>
+          <td>
+            Tu: <p> <span id="scr"></span> </p>
+          </td>
+          <td>
+            Bot: <p> <span id="scravv"></span> </p>
+          </td>
+        </tr>
+        </table>
+  </body>
+</html>
