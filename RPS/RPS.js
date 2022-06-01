@@ -2,30 +2,23 @@
  var scr = 0
  var scravv = 0
 
-  function DrawSasso(x,y){                 /*sasso = 0*/
+  function Draw(x,y,k){                 /*sasso = 0*/
   var c = document.getElementById("rps");
   var ctx = c.getContext("2d");
-  var img = document.getElementById("r");
-  ctx.drawImage(img,x,y,100,100);
+  var rock = document.getElementById("r");
+  var paper = document.getElementById("p");
+  var scissors = document.getElementById("s");
+   
+   if(k == 0)
+    ctx.drawImage(rock,x,y,100,100);
+   
+   else if(k == 1)
+    ctx.drawImage(paper,x,y,100,100);
+   
+   else if(k == 2)
+    ctx.drawImage(scissors,x,y,100,100);
   }
-  
-  
-  function DrawCarta(x,y){                /*carta = 1*/
-  var c = document.getElementById("rps");
-  var ctx = c.getContext("2d");
-  var img = document.getElementById("p");
-  ctx.drawImage(img,x,y,100,100);
-  }
-    
-    
-  function DrawForbici(x,y){                 /*forbici = 2*/
-  var c = document.getElementById("rps");
-  var ctx = c.getContext("2d");
-  var img = document.getElementById("s");
-  ctx.drawImage(img,x,y,100,100);
-  }
-  
-  
+
   function clear(){
     var c = document.getElementById("rps");
     var ctx = c.getContext("2d");
@@ -36,11 +29,11 @@
    
   function PlaySasso(){
     clear();
-    DrawSasso(130,200);
+    Draw(130,200,0);
     var avver = Math.floor(Math.random() * 3);
       if(avver==0){
          DrawSasso(130,50);
-         document.getElementById("cnsl").innerHTML = "Parit‡!";
+         document.getElementById("cnsl").innerHTML = "Parit√†!";
       }
       if(avver==1){
          DrawForbici(130,50);
@@ -61,7 +54,7 @@
   
   function PlayCarta(){
     clear();
-    DrawCarta(130,200);
+    Draw(130,200,1);
     var avver = Math.floor(Math.random() * 3);
      if(avver==0){
          DrawSasso(130,50);
@@ -75,7 +68,7 @@
       }
       if(avver==2){
          DrawCarta(130,50);
-         document.getElementById("cnsl").innerHTML = "Parit‡!";
+         document.getElementById("cnsl").innerHTML = "Parit√†!";
       }
           document.getElementById("scr").innerHTML = scr;
           document.getElementById("scravv").innerHTML = scravv;
@@ -86,7 +79,7 @@
   
   function PlayForbici(){
     clear();
-    DrawForbici(130,200);
+    Draw(130,200,2);
     var avver = Math.floor(Math.random() * 3);
     if(avver==0){
          DrawSasso(130,50);
@@ -95,7 +88,7 @@
       }
       if(avver==1){
          DrawForbici(130,50);
-         document.getElementById("cnsl").innerHTML = "Parit‡!";
+         document.getElementById("cnsl").innerHTML = "Parit√†!";
       }
       if(avver==2){
          DrawCarta(130,50);
